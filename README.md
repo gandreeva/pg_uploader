@@ -1,2 +1,2 @@
 # pg_uploader
-Загрузка файлов в формате csv\excell в postgresql
+Uploading files in csv\excell format to postgresql

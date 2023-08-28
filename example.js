@@ -6,6 +6,7 @@ const { Integer } = require('read-excel-file');
 require('pg-essential').patch(pg);
 
 // Uploading googleplaystore statistics
+// examples ./data
 
 var data_dir, mask;;
 var table_name = {table: 'rfm_analysis', schema: 'import_data'}

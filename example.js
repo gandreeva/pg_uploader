@@ -5,46 +5,25 @@ const pg = require('pg');
 const { Integer } = require('read-excel-file');
 require('pg-essential').patch(pg);
 
-// Севооборотов по полям и прогнозной урожайности
-// Загрузка севооборотов: node .\upload_seasons.js .\seasons\ '(problem)'
-// Загрузка севооборотов c прогнозной урожайностью: node .\upload_seasons.js .\seasons\ '(\d{3})'
-// Загрузка севооборотов c прогнозной урожайностью: node .\upload_seasons.js .\seasons\ '(\w*yield.xls)'
+// Uploading googleplaystore statistics
+
 var data_dir, mask;;
 var table_name = {table: 'rfm_analysis', schema: 'import_data'}
 
-/* var obj_desc = {
-    column1: {name:"crop", type:'text'},                    
-    column2: {name:"elev_from", type:'text' },
-    column3: {name:"port", type:'text' },
-    column4: {name:"distance", type:'text', convFn: parseInt },
-    column5: {name:"tarif", type:'text', convFn: parseFloat }
-};
- */
-
-
-/* const obj_desc = {
-  'plant':{	prop: 'plant', type: 'Integer'}, 
-  'varnt':{	prop: 'varnt', type: 'Integer'},
-  'version':{	prop: 'version', type: 'Integer'},
-  'cluster':{	prop: 'cluster', type: 'Integer'},
-  'crop_txt':{	prop: 'crop_txt', type: String},
-  'field_id':{	prop: 'field_id', type: String},
-  'crop_sqr':	{ prop: 'crop_sqr',  sqlType:'numeric(6,1)'},
-  'crop_yield':	{prop: 'crop_yield',  sqlType:'numeric(6,1)'},
-  'pred_yield':{	prop: 'pred_yield',  sqlType: 'numeric(5,1)'},
-  'used_sqr'	:{	prop: 'used_sqr', sqlType: 'numeric(5,1)'}
-  }; */
-
- 
-
-  const obj_desc = {
-
-    'CustomerID':{prop: 'CustomerID', type: 'Integer'},
-    'PurchaseDate':{prop: 'PurchaseDate', type: String},
-    'TransactionAmount':{prop: 'TransactionAmount', sqlType: 'numeric(10,2)'},
-    'ProductInformation':{prop: 'ProductInformation', type: String},
-    'OrderID':{prop: 'OrderID', type: 'Integer'},
-    'Location':{prop: 'Location', type: String},
+const obj_desc = {
+    'App':{	prop: 'App', type: String},
+    'Category':{	prop: 'Category', type: String},
+    'Rating':{	prop: 'Rating', type: String},
+    'Reviews':{	prop: 'Reviews', type: String},
+    'Size':{	prop: 'Size', type: String},
+    'Installs':{	prop: 'Installs', type: String},
+    'Type':{	prop: 'Type', type: String},
+    'Price':{	prop: 'Price', type: String},
+    'Content Rating':{	prop: 'Content_Rating', type: String},
+    'Genres':{	prop: 'Genres', type: String},
+    'Last Updated':{	prop: 'Last_Updated', type: String},
+    'Current Ver':{	prop: 'Current_Ver', type: String},
+    'Android Ver':{	prop: 'Android_Ver', type: String},
     };
 
 
